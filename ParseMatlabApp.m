@@ -18,9 +18,9 @@ t_Orientation=CreateTimeVector(Orientation.Properties.RowTimes);
 t_AngVel=CreateTimeVector(AngularVelocity.Properties.RowTimes);
 
 %Find the data collection frequency for each measurement
-Accel_rate=1/mean(diff(t_Accel));
-Orient_rate=1/mean(diff(t_Orientation));
-AngVel_rate=1/mean(diff(t_AngVel));
+Accel_rate=1/median(diff(t_Accel));
+Orient_rate=1/median(diff(t_Orientation));
+AngVel_rate=1/median(diff(t_AngVel));
 
 %Extract the acceleration, orientation, and angular velocity values
 MotionData.Accel=table2array(timetable2table(Acceleration,'ConvertRowTimes',false));
