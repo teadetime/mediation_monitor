@@ -1,10 +1,10 @@
-function [chunked_t_Accel,chunked_Accel] = TrimMotionData(MotionData,time_trim)
+function [chunked_t_Accel,chunked_Accel] = TrimMotionData(MotionData,chunk_size,time_trim)
 %TRIMMOTIONDATA Summary of this function goes here
 Fs = MotionData.accel_rate % in hertz
 N = length(MotionData.t_Accel)
 
 % FIlter data into 1 minute chunk
-chunk_sz = 60 % time in seconds
+chunk_sz = chunk_size % time in seconds
 chunks = 10
 chunk_sz_index = round(chunk_sz * Fs)
 front_trim = time_trim % trim the first ten
