@@ -1,6 +1,6 @@
 function [chunked_t_Accel,chunked_Accel] = TrimMotionData(MotionData,chunk_size,time_trim)
 %TRIMMOTIONDATA Summary of this function goes here
-Fs = MotionData.accel_rate % in hertz
+Fs = MotionData.accel_rate; % in hertz
 N = length(MotionData.t_Accel)
 
 % FIlter data into 1 minute chunk
